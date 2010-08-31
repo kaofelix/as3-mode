@@ -98,7 +98,7 @@
    )
   "Subdued level highlighting for As3 mode.")
 
-(define-derived-mode as3-mode fundamental-mode "as3-mode"
+(define-derived-mode as3-mode fundamental-mode "ActionScript 3"
   "A major mode for editing Actionscript 3 files."
   :syntax-table as3-mode-syntax-table
   (set (make-local-variable 'comment-start) "//")
