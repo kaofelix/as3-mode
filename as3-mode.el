@@ -110,17 +110,6 @@
 (defvar as3-flyparse-path-to-variable-def-name
   (append as3-flyparse-path-to-variable-def '("VAR_DECLARATION" "NAME")))
 
-
-
-
-(defvar as3-mode-map
-  (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "C-c C-c") 'comment-region)
-    (define-key map (kbd "C-c m") 'as3-quick-menu)
-    (define-key map (kbd "C-c h") 'as3-show-help-at-point)
-    map)
-  "Keymap for `as3-mode'.")
-
 (defvar as3-mode-syntax-table
   (let ((st (make-syntax-table)))
     (modify-syntax-entry ?\" "\""   st)
