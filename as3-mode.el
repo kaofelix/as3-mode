@@ -69,8 +69,6 @@
     '("\\<\\(function\\)\\>\\(?:\\s-+\\(\\sw+\\)\\)?"
       (1 font-lock-keyword-face)
       (2 font-lock-function-name-face nil t))
-    '("\\<\\(function\\)\\>"
-      (1 font-lock-keyword-face))
     '("\\<\\([A-Z_]+\\)\\>"
       (1 font-lock-constant-face))
     '("\\<\\([A-Z]\\sw+\\)\\>"
@@ -82,10 +80,6 @@
       (1 font-lock-variable-name-face nil t))
     '("\\<\\(\\|this\\|super\\|debugger\\|delete\\|export\\|in\\|is\\|typeof\\|with\\)\\>"
       (1 font-lock-builtin-face))
-    '("\\<\\(public\\|private\\|override\\|protected\\|import\\|package\\|static\\|class\\|const\\|extends\\|implements\\)\\>"
-      (1 font-lock-keyword-face))
-    '("\\<\\(return\\|new\\|if\\|else\\|while\\|for\\|throw\\)\\>"
-      (1 font-lock-keyword-face))
     '("\\<\\(default\\)\\>\\(?:\\s-+\\(\\sw+\\)\\)?"
       (1 font-lock-keyword-face)
       (2 font-lock-variable-name-face nil t))
@@ -105,7 +99,10 @@
 
 (define-generic-mode as3-mode
   '("//")                               ; Comments
-  nil                                   ; Keywords
+  ;; Keywords
+  '("function" "public" "private" "override" "protected" "import" "package"
+    "static" "class" "const" "extends" "implements" "var"
+    "return" "new" "if" "else" "while" "for" "throw" "default" "void")
   as3-font-lock-keywords                ; Extra font lock
   '("\\.as$")                           ; auto-mode
   '(as3-setup)
