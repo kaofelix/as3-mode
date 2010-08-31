@@ -98,15 +98,18 @@
    )
   "Subdued level highlighting for As3 mode.")
 
-(define-derived-mode as3-mode fundamental-mode "ActionScript 3"
-  "A major mode for editing Actionscript 3 files."
-  :syntax-table as3-mode-syntax-table
-  (set (make-local-variable 'comment-start) "//")
-  (set (make-local-variable 'font-lock-defaults) (list as3-font-lock-keywords))
+(defun as3-setup ()
   (set (make-local-variable 'indent-line-function) 'as3-indent-line)
   (setq tab-width 4)
-  (as3-project-helper-load)
-  (run-hooks 'as3-mode-hook))
+  (as3-project-helper-load))
+
+(define-generic-mode as3-mode
+  '("//")                               ; Comments
+  nil                                   ; Keywords
+  as3-font-lock-keywords                ; Extra font lock
+  '("\\.as$")                           ; auto-mode
+  '(as3-setup)
+  "A major mode for editing Actionscript 3 files.")
 
 ;; Indentation
 
