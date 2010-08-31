@@ -106,12 +106,7 @@
   (set (make-local-variable 'indent-line-function) 'as3-indent-line)
   (setq tab-width 4)
   (as3-project-helper-load)
-  (setq flyparse-single-file-to-stdout-maker as3-flyparse-single-file-to-stdout-cmd-maker)
-  (setq flyparse-single-file-cmd-maker as3-flyparse-single-file-cmd-maker)
-  (setq flyparse-recursive-cmd-maker as3-flyparse-recursive-cmd-maker)
-  (flyparse-mode-on)
-  (run-hooks 'as3-mode-hook)
-  )
+  (run-hooks 'as3-mode-hook))
 
 ;; Indentation
 

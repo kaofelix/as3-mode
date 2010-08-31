@@ -28,6 +28,12 @@
 (require 'flyparse-mode)
 (require 'ido)
 
+(defun as3-flyparse-init ()
+  (setq flyparse-single-file-to-stdout-maker
+        as3-flyparse-single-file-to-stdout-cmd-maker)
+  (setq flyparse-single-file-cmd-maker as3-flyparse-single-file-cmd-maker)
+  (setq flyparse-recursive-cmd-maker as3-flyparse-recursive-cmd-maker))
+
 (defvar as3-flyparse-single-file-to-stdout-cmd-maker 'as3-flyparse-make-single-file-to-stdout-cmd
   "The shell command maker for parsing a single as3 file and printing the resultant tree to stdout.")
 (make-variable-buffer-local 'as3-flyparse-single-file-to-stdout-cmd-maker)
