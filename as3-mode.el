@@ -28,7 +28,6 @@
 (require 'fdb)
 (require 'flyparse-mode)
 (require 'font-lock)
-(require 'yasnippet)
 (require 'ido)
 
 
@@ -298,7 +297,6 @@
   (setq flyparse-single-file-cmd-maker as3-flyparse-single-file-cmd-maker)
   (setq flyparse-recursive-cmd-maker as3-flyparse-recursive-cmd-maker)
   (flyparse-mode-on)
-  (yas/initialize)
   (run-hooks 'as3-mode-hook)
   )
 
@@ -1663,11 +1661,6 @@
 	 (url (format livedoc-url file-path)))
     (browse-url url)))
 
-
-(yas/define 'as3-mode "fu" "function(${arg}){
-    $0
-}" "function(...){ ... }"
-)
 
 
 ;; Definitions to support as3 projects
