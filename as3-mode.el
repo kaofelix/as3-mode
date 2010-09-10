@@ -98,7 +98,7 @@
   (as3-project-helper-load))
 
 (define-generic-mode as3-mode
-  '("//")                               ; Comments
+  '("//" ("/*" . "*/"))                 ; Comments
   ;; Keywords
   '("function" "public" "private" "override" "protected" "import" "package"
     "static" "class" "const" "extends" "implements" "var"
