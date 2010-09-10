@@ -54,7 +54,7 @@
     (modify-syntax-entry ?/  ". 124b" st)
     (modify-syntax-entry ?*  ". 23"   st)
     (modify-syntax-entry ?\n "> b"  st)
-    (modify-syntax-entry ?\^m "> b" st)
+    (modify-syntax-entry ? "> b" st)
     st)
   "Syntax table for `as3-mode'.")
 
